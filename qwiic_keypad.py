@@ -43,7 +43,7 @@
 # pylint: disable=line-too-long, bad-whitespace, invalid-name
 #
 
-"""
+"""!
 qwiic_keypad
 ============
 Python module for the[SparkFun Qwiic Keypad - 12 Button Breakout](https://www.sparkfun.com/products/15290)
@@ -53,7 +53,6 @@ This python package is a port of the existing [SparkFun Qwiic Keypad Arduino Lib
 This package can be used in conjunction with the overall [SparkFun qwiic Python Package](https://github.com/sparkfun/Qwiic_Py)
 
 New to qwiic? Take a look at the entire [SparkFun qwiic ecosystem](https://www.sparkfun.com/qwiic).
-
 """
 #-----------------------------------------------------------------------------
 import qwiic_i2c
@@ -86,15 +85,15 @@ KEYPAD_CHANGE_ADDRESS = 0x07
 # from this module.
 
 class QwiicKeypad(object):
-    """
+    """!
     QwiicKeypad
 
-        :param address: The I2C address to use for the device.
+    @param address: The I2C address to use for the device.
                         If not provided, the default address is used.
-        :param i2c_driver: An existing i2c driver object. If not provided
+    @param i2c_driver: An existing i2c driver object. If not provided
                         a driver object is created.
-        :return: The QwiicKeypad device object.
-        :rtype: Object
+
+    @return **Object** The QwiicKeypad device object.
     """
     # Constructor
     device_name         = _DEFAULT_NAME
@@ -125,12 +124,10 @@ class QwiicKeypad(object):
     # Is an actual board connected to our system?
 
     def is_connected(self):
-        """
-            Determine if a Keypad device is conntected to the system..
+        """!
+        Determine if a Keypad device is conntected to the system..
 
-            :return: True if the device is connected, otherwise False.
-            :rtype: bool
-
+        @return **bool** True if the device is connected, otherwise False.
         """
         return self._i2c.isDeviceConnected(self.address)
 
@@ -141,12 +138,10 @@ class QwiicKeypad(object):
     #
     # Initialize the system/validate the board.
     def begin(self):
-        """
-            Initialize the operation of the Keypad module
+        """!
+        Initialize the operation of the Keypad module
 
-            :return: Returns true of the initializtion was successful, otherwise False.
-            :rtype: bool
-
+        @return **bool** Returns true of the initializtion was successful, otherwise False.
         """
 
         # Basically return True if we are connected...
@@ -159,15 +154,13 @@ class QwiicKeypad(object):
     # Returns the button at the top of the stack (aka the oldest button)
 
     def get_button(self):
-        """
-            Returns the button at the top of the stack (aka the oldest button).
+        """!
+        Returns the button at the top of the stack (aka the oldest button).
 
             The return value is the 'ascii' value of th key pressed. To convert
             to a character, use the python char() function.
 
-            :return: The next button value
-            :rtype: byte as integer
-
+        @return **byte as integer** The next button value
         """
         value = 0
 
@@ -184,12 +177,10 @@ class QwiicKeypad(object):
     #
     # Returns the number of milliseconds since the current button in FIFO was pressed.
     def time_since_pressed(self):
-        """
-            Returns the number of milliseconds since the current button in FIFO was pressed.
+        """!
+        Returns the number of milliseconds since the current button in FIFO was pressed.
 
-            :return: The elapsed time since button was pressed
-            :rtype: integer
-
+        @return **integer** The elapsed time since button was pressed
         """
         MSB = self._i2c.readByte(self.address, KEYPAD_TIME_MSB)
         LSB = self._i2c.readByte(self.address, KEYPAD_TIME_LSB)
@@ -201,11 +192,10 @@ class QwiicKeypad(object):
     # Returns a string of the firmware version number
 
     def get_version(self):
-        """
+        """!
         Returns a string of the firmware version number
 
-        :return: The firmware version
-        :rtype: string
+        @return **string** The firmware version
         """
         vMajor = self._i2c.readByte(self.address, KEYPAD_VERSION1)
         vMinor = self._i2c.readByte(self.address, KEYPAD_VERSION2)
@@ -220,11 +210,11 @@ class QwiicKeypad(object):
     #  note, this actually sets the bit0 on the updateFIFO register
 
     def update_fifo(self):
-        """
+        """!
         "commands" keypad to plug in the next button into the registerMap
         note, this actually sets the bit0 on the updateFIFO register
 
-        :return: No return value
+        @return No return value
         """
         # set bit0, commanding keypad to update fifo
         self._i2c.writeByte(self.address, KEYPAD_UPDATE_FIFO, 0x01)
