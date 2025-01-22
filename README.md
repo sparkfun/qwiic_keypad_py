@@ -1,68 +1,77 @@
-Qwiic_Keypad_Py
-==============
+![Qwiic Keypad Python Package](docs/images/keypad-gh-banner-py.png "qwiic Keypad Python Package" )
 
-<p align="center">
-   <img src="https://cdn.sparkfun.com/assets/custom_pages/2/7/2/qwiic-logo-registered.jpg"  width=200>  
-   <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png"  width=240>   
-</p>
-<p align="center">
-	<a href="https://pypi.org/project/sparkfun-qwiic-keypad/" alt="Package">
-		<img src="https://img.shields.io/pypi/pyversions/sparkfun_qwiic_keypad.svg" /></a>
-	<a href="https://github.com/sparkfun/Qwiic_Keypad_Py/issues" alt="Issues">
-		<img src="https://img.shields.io/github/issues/sparkfun/Qwiic_Keypad_Py.svg" /></a>
-	<a href="https://qwiic-keypad-py.readthedocs.io/en/latest/?" alt="Documentation">
-		<img src="https://readthedocs.org/projects/qwiic-keypad-py/badge/?version=latest&style=flat" /></a>
-	<a href="https://github.com/sparkfun/Qwiic_Keypad_Py/blob/master/LICENSE" alt="License">
-		<img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
-	<a href="https://twitter.com/intent/follow?screen_name=sparkfun">
-        	<img src="https://img.shields.io/twitter/follow/sparkfun.svg?style=social&logo=twitter"
-           	 alt="follow on Twitter"></a>
-	
-</p>
+# SparkFun Qwiic Keypad - Python Package
 
-<img src="https://cdn.sparkfun.com//assets/parts/1/3/7/7/7/15290-SparkFun_Qwiic_Keypad_-_12_Button-01.jpg"  align="right" width=300 alt="SparkFun Qwiic Keypad Breakout">
+![PyPi Version](https://img.shields.io/pypi/v/sparkfun_qwiic_keypad)
+![GitHub issues](https://img.shields.io/github/issues/sparkfun/qwiic_keypad_py)
+![License](https://img.shields.io/github/license/sparkfun/qwiic_keypad_py)
+![X](https://img.shields.io/twitter/follow/sparkfun)
+[![API](https://img.shields.io/badge/API%20Reference-blue)](https://docs.sparkfun.com/qwiic_keypad_py/classqwiic__keypad_1_1_qwiic_keypad.html)
 
-Python module for the qwiic keypad, which is part of the [SparkFun Qwiic Keypad - 12 Button](https://www.sparkfun.com/products/15290)
+The SparkFun Qwiic Keypad provides a simple and cost effective solution for adding button inputs to your project without tying up GPIO lines. Implementing a SparkFun Qwiic I2C interface, these sensors can be rapidly added to any project with boards that are part of the SparkFun Qwiic ecosystem.
 
-This python package is a port of the existing [SparkFun Qwiic Keypad Arduino Library](https://github.com/sparkfun/SparkFun_Qwiic_Keypad_Arduino_Library)
+This repository implements a Python package for the SparkFun Qwiic Keypad. This package works with Python, MicroPython and CircuitPython.
 
-This package can be used in conjunction with the overall [SparkFun qwiic Python Package](https://github.com/sparkfun/Qwiic_Py)
+### Contents
+
+* [About](#about-the-package)
+* [Getting Started](#getting-started)
+* [Installation](#installation)
+* [Supported Platforms](#supported-platforms)
+* [Documentation](https://docs.sparkfun.com/qwiic_keypad_py/classqwiic__keypad_1_1_qwiic_keypad.html)
+* [Examples](#examples)
+
+## About the Package
+
+This python package enables the user to access the features of the Keypad via a single Qwiic cable. This includes reading keypresses, time of press, and more. The capabilities of the Keypad are each demonstrated in the included examples.
 
 New to qwiic? Take a look at the entire [SparkFun qwiic ecosystem](https://www.sparkfun.com/qwiic).
 
-## Contents
+### Supported SparkFun Products
 
-* [Dependencies](#dependencies)
-* [Installation](#installation)
-* [Documentation](#documentation)
-* [Example Use](#example-use)
+This Python package supports the following SparkFun qwiic products on Python, MicroPython and Circuit python. 
 
-Dependencies 
----------------
-This driver package depends on the qwiic I2C driver: 
-[Qwiic_I2C_Py](https://github.com/sparkfun/Qwiic_I2C_Py)
+* [SparkFun Qwiic Keypad - 12 Button](https://www.sparkfun.com/sparkfun-qwiic-keypad-12-button.html)
 
-Documentation
--------------
-The SparkFun qwiic Keypad module documentation is hosted at [ReadTheDocs](https://qwiic-keypad-py.readthedocs.io/en/latest/?)
+### Supported Platforms
 
-Installation
--------------
+| Python | Platform | Boards |
+|--|--|--|
+| Python | Linux | [Raspberry Pi](https://www.sparkfun.com/raspberry-pi-5-8gb.html) , [NVIDIA Jetson Orin Nano](https://www.sparkfun.com/nvidia-jetson-orin-nano-developer-kit.html) via the [SparkFun Qwiic SHIM](https://www.sparkfun.com/sparkfun-qwiic-shim-for-raspberry-pi.html) |
+| MicroPython | Raspberry Pi - RP2, ESP32 | [SparkFun RP2040 Thing+](https://www.sparkfun.com/sparkfun-thing-plus-rp2040.html), [SparkFun RP2350 Thing+](https://www.sparkfun.com/sparkfun-thing-plus-rp2350.html), [SparkFun ESP32 Thing+](https://www.sparkfun.com/sparkfun-thing-plus-esp32-wroom-usb-c.html)
+|CircuitPython | Raspberry Pi - RP2, ESP32 | [SparkFun RP2040 Thing+](https://www.sparkfun.com/sparkfun-thing-plus-rp2040.html), [SparkFun RP2350 Thing+](https://www.sparkfun.com/sparkfun-thing-plus-rp2350.html), [SparkFun ESP32 Thing+](https://www.sparkfun.com/sparkfun-thing-plus-esp32-wroom-usb-c.html)
 
-### PyPi Installation
-This repository is hosted on PyPi as the [sparkfun-qwiic-keypad](https://pypi.org/project/sparkfun-qwiic-keypad/) package. On systems that support PyPi installation via pip, this library is installed using the following commands
+> [!NOTE]
+> The listed supported platforms and boards are the primary platform targets tested. It is fully expected that this package will work across a wide variety of Python enabled systems. 
+
+## Installation 
+
+The first step to using this package is installing it on your system. The install method depends on the python platform. The following sections outline installation on Python, MicroPython and CircuitPython.
+
+### Python 
+
+The package is primarily installed using the `pip` command, downloading the package from the Python Index - "PyPi". Note - the below instructions outline installation an Linux-based (Raspberry Pi) system.
+
+#### PyPi Installation
+
+The SparkFun Qwiic Keypad Python package is part of the overall SparkFun Qwiic Python package which is hosted on PyPi. On systems that support PyPi installation via pip, this library is installed using the following commands
 
 For all users (note: the user must have sudo privileges):
 ```sh
-sudo pip install sparkfun-qwiic-keypad
+sudo pip install sparkfun-qwiic
 ```
 For the current user:
 
 ```sh
-pip install sparkfun-qwiic-keypad
+pip install sparkfun-qwiic
 ```
-
-### Local Installation
+---
+---
+> [!CAUTION]
+> **TODO** Put together how this works with the new virtual environments used with the latest Python install
+---
+---
+#### Local Installation
 To install, make sure the setuptools package is installed on the system.
 
 Direct installation at the command line:
@@ -78,11 +87,34 @@ A package file is built and placed in a subdirectory called dist. This package f
 ```sh
 cd dist
 pip install sparkfun_qwiic_keypad-<version>.tar.gz
-  
 ```
+
+### MicroPython Installation
+If not already installed, follow the [instructions here](https://docs.micropython.org/en/latest/reference/mpremote.html) to install mpremote on your computer.
+
+Connect a device with MicroPython installed to your computer and then install the package directly to your device with mpremote mip.
+```sh
+mpremote mip install github:sparkfun/qwiic_keypad_py
+```
+
+### CircuitPython Installation
+If not already installed, follow the [instructions here](https://docs.circuitpython.org/projects/circup/en/latest/#installation) to install CircUp on your computer.
+
+Ensure that you have the latest version of the SparkFun Qwiic CircuitPython bundle. 
+```sh
+circup bundle-add sparkfun/Qwiic_Py
+```
+
+Finally, connect a device with CircuitPython installed to your computer and then install the package directly to your device with circup.
+```sh
+circup install --py qwiic_keypad
+```
+
 Example Use
  ---------------
-See the examples directory for more detailed use examples.
+Below is a quickstart program to print which button was pressed or a space if '*' is pressed and a newline if '#' is pressed.
+
+See the examples directory for more detailed use examples and [examples/README.md](https://github.com/sparkfun/qwiic_keypad_py/blob/main/examples/README.md) for a summary of the available examples.
 
 ```python
 import qwiic_keypad
@@ -91,7 +123,7 @@ import sys
 
 def runExample():
 
-	print("\nSparkFun qwiic Keypad   Example 1\n")
+	print("\nSparkFun qwiic Keypad Example 1\n")
 	myKeypad = qwiic_keypad.QwiicKeypad()
 
 	if myKeypad.is_connected() == False:
@@ -130,6 +162,5 @@ def runExample():
 		# Development in progress
 ```
 <p align="center">
-<a href="https://www.sparkfun.com" alt="SparkFun">
-<img src="https://cdn.sparkfun.com/assets/custom_pages/3/3/4/dark-logo-red-flame.png" alt="SparkFun - Start Something"></a>
+<img src="https://cdn.sparkfun.com/assets/custom_pages/3/3/4/dark-logo-red-flame.png" alt="SparkFun - Start Something">
 </p>
