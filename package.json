@@ -1,9 +1,8 @@
 {
     "urls": [
-      ["qwiic_keypad.py", "github:sparkfun/Qwiic_Keypad_Py/qwiic_keypad.py"]
-    ],
-    "deps": [
-      ["github:sparkfun/Qwiic_I2C_Py", "master"]
+      ["qwiic_keypad_py_examples/qwiic_keypad_ex1.py", "github:sparkfun/qwiic_keypad_py/examples/qwiic_keypad_ex1.py"],
+      ["qwiic_keypad_py_examples/qwiic_keypad_ex2.py", "github:sparkfun/qwiic_keypad_py/examples/qwiic_keypad_ex2.py"],
+      ["qwiic_keypad_py_examples/qwiic_keypad_ex3.py", "github:sparkfun/qwiic_keypad_py/examples/qwiic_keypad_ex3.py"]
     ],
     "version": "0.9.1"
 }
