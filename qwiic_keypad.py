@@ -217,4 +217,10 @@ class QwiicKeypad(object):
         @return No return value
         """
         # set bit0, commanding keypad to update fifo
-        self._i2c.writeByte(self.address, KEYPAD_UPDATE_FIFO, 0x01)
+        # Wrap in try-catch to fix issues in the bus on Raspberry Pi  
+        # and to ensure its reliability
+        try:              
+            self._i2c.writeByte(self.address, KEYPAD_UPDATE_FIFO, 0x01)
+        except IOError:
+            pass
+       
