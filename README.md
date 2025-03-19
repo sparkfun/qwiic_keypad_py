@@ -1,4 +1,4 @@
-![Qwiic Keypad Python Package](docs/images/keypad-gh-banner-py.png "qwiic Keypad Python Package" )
+![Qwiic Keypad Python Package](docs/images/keypad-gh-banner-py.PNG "qwiic Keypad Python Package" )
 
 # SparkFun Qwiic Keypad - Python Package
 
